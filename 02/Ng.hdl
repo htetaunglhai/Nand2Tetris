@@ -1,0 +1,36 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/Or16Way.hdl
+
+/**
+ * Ng: 
+ */
+
+CHIP Ng {
+    IN in[16];
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+
+    Or8Way(in=in[0..7], out=out1);
+    Or8Way(in=in[8..15], out=out2);
+    Or(a=out1, b=out2, out=out3);
+    Not(in=out3, out=notout3);
+    And(a=in[15], b=notout3, out=out4);
+    And(a=in[15], b=out3, out=out5);
+    Or(a=out4, b=out5, out=out);
+    
+
+
+
+
+
+
+      
+  
+   
+
+
+}
